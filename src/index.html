@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>machine coding</title>
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <h1>Employee Database management</h1>
+      <button class="addEmployee">Add Employee</button>
+    </header>
+  </div>
+  <div class="employees">
+    <div class="employee-list-container">
+      <div class="employee-list-container-title">Employee List</div>
+      <div class="employees-name"></div>
+    </div>
+    <div class="employee-details-container">
+      <div class="employee-details-container-title">Employee Info</div>
+      <div class="employee-detail-info"></div>
+    </div>
+  </div>
+  <div class="addEmployeeModal">
+    <form class="addEmployee-create">
+      <h1>Add a new Employee</h1>
+        <input type="text" name="name" placeholder="Name" required >
+        <input type="text" name="imageUrl" placeholder="upload image (optional)" >
+        <input type="text" name="position" placeholder="position" required >
+        <input type="email" name="email" value="sane@hotmail.com" placeholder="email" required >
+        <input type="number" name="salary" placeholder="salary" required >
+        <input type="date" name="hire_date" placeholder="Date of joining" required >
+        <input type="submit" value="Submit" class="addEmployee-submit">
+    </form>
+  </div>
+  <script src="index.js"></script>
+  
+</body>
+</html>

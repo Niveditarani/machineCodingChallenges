@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "imageUrl": "https://cdn-icons-png.flaticon.com/512/0/93.png",
+    "position": "Software Engineer",
+    "email": "johndoe@hmail.com",
+    "salary": 60000,
+    "hire_date": "2020-01-15" 
+    
+  },
+  {
+    "id": 2,    
+    "name": "Jane Smith",
+    "imageUrl": "https://cdn-icons-png.flaticon.com/512/0/93.png",
+    "position": "Project Manager",
+    "email": "janesmith@hmail.com",
+    "salary": 80000,
+    "hire_date": "2019-03-22"
+  },
+  {
+    "id": 3,    
+    "name": "Alice Johnson",
+    "imageUrl": "https://cdn-icons-png.flaticon.com/512/0/93.png",
+    "position": "Data Analyst",
+    "email": "alicejon@hmail.com",
+    "salary": 70000,
+    "hire_date": "2021-06-10"
+  },
+  {
+    "id": 4,    
+    "name": "Bob Brown",
+    "imageUrl": "https://cdn-icons-png.flaticon.com/512/0/93.png",
+    "position": "UX Designer",
+    "email": "bobbybrown@hmail.com",
+    "salary": 65000,
+    "hire_date": "2018-11-05"
+  },
+  {
+    "id": 5,
+    "name": "Charlie Davis",
+    "imageUrl": "https://cdn-icons-png.flaticon.com/512/0/93.png",
+    "position": "DevOps Engineer",
+    "email": "charliedave@hmail.com",
+    "salary": 75000,
+    "hire_date": "2022-02-20"
+  }
+]

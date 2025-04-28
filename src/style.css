@@ -1,0 +1,181 @@
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0 10px;
+}
+:root{
+  --btn:color: #4CAF50;
+  --btn:hover:color: #45a049;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(16, 84, 61);
+  color: wheat;
+  padding: 10px;
+}
+
+.header > button {
+  background-color: var(--btn:color);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.header > button:hover{
+  background-color: wheat;
+  color: rgb(16, 84, 61);
+}
+
+.employees {
+  display: flex;
+}
+
+.employees > div {
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  height: 550px;
+  overflow-y: scroll;
+
+}
+.employee-list-container{
+  width: 30%;
+}
+.employee-details-container{
+  width: 70%;
+}
+
+.employee-list-container, .employee-details-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-list-container-title, .employee-details-container-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.employees-name{
+  display: flex;
+  flex-direction: column;
+}
+
+.employees-name-item{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  background-color: rgb(16, 84, 61);
+  color: wheat;
+  border-radius: 10px;
+}
+
+.employees-name-item:hover, .selected{
+  background-color: wheat;
+  color: rgb(16, 84, 61);
+}
+
+.employee-detail-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.employee-detail-info > img{
+  width: 250px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.employee__name{
+  text-align: center;
+  font-size: 25px;
+  padding: 5px;
+}
+
+.addEmployeeModal{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(19, 63, 63);
+}
+
+.addEmployee-create{
+  width: 450px;
+  height: 450px;
+  background-color: wheat;
+  padding: 20px;
+  box-shadow: 0 0 50px grey;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.addEmployee-create > div{
+  display: grid;
+  grid-template-columns: 48.1% 48.1%;
+  column-gap: 15px;
+}
+
+.addEmployee-create input{
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.addEmployee-create input::-webkit-inner-spin-button, .addEmployee-create input::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.addEmployee-submit{
+  padding: 15px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  background-color: rgb(19, 63, 63);
+  color: wheat;
+}
+.addEmployee-submit:hover{
+  background-color: rgb(57, 189, 145);
+  font-weight: bold;
+  color: rgb(5, 5, 63);
+}
+
+.editEmployee{
+  margin-top: 15px;
+  background-color: rgb(7, 58, 41);
+  color: wheat;
+  padding: 15px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.editEmployee:hover{
+  background-color: wheat;
+  color: rgb(7, 58, 41);
+}
