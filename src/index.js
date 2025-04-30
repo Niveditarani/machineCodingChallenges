@@ -1,4 +1,6 @@
+//IIFE (Immediately Invoked Function Expression)
 (async function(){
+  //async/await for fetching data
   const data = await fetch('data.json');
   const res= await data.json();
   console.log(res);
@@ -6,18 +8,19 @@
   let selectedEmployeeId = "";
   let selectedEmployee = "";
   
+  //DOM Manipulation
   const employeeList = document.querySelector(".employees-name");
   const employeeInfo = document.querySelector(".employee-detail-info");
-
-    //add employee logic
   const addEmployee = document.querySelector(".addEmployee");
   const addEmployeeModal = document.querySelector(".addEmployeeModal");
   const addEmployeeForm = document.querySelector(".addEmployee-create");
 
+  //Opening AddEmployee modal
   addEmployee.addEventListener("click", ()=>{
     addEmployeeModal.style.display= "flex";
   })
 
+  //Closing AddEmployee modal if background clicked
   addEmployeeModal.addEventListener("click", (e)=>{
     if (e.target ===addEmployeeModal){
       addEmployeeModal.style.display= "none";
@@ -26,7 +29,7 @@
 
    //form submission logic
    addEmployeeForm.addEventListener("submit", (e)=> {
-    e.preventDefault();
+    e.preventDefault(); //Prevent form reload
     const formData = new FormData(addEmployeeForm);
     const empData = Object.fromEntries(formData.entries());
     //check if we're editing an existing employee
@@ -57,19 +60,14 @@
       empData.salary = Number(empData.salary);
       employees.push(empData);
     }
-    /* const values = [...formData.entries()];
-    let empData = {};
-    console.log(values);
-    values.forEach(val => {
-      empData[val[0]]=val[1];
-    }); */
-    //reset the form and UI
+
+    //reset the form and UI after submission
     addEmployeeForm.reset();
     addEmployeeForm.querySelector("h1").textContent = "Add a new Employee Info";
     addEmployeeForm.querySelector('[type="submit"]').value = 'Submit';
     delete addEmployeeForm.dataset.editingId;
 
-    //Update the display & the UI
+    //re-render UI
     renderEmployees();
     renderSingleEmployee();
     
@@ -115,7 +113,7 @@
   };
   
 
-  //render single employee
+  //render single employee info
   const renderSingleEmployee = () =>{
     if(!selectedEmployee || selectedEmployee=== -1) {
       employeeInfo.innerHTML="";
@@ -139,14 +137,8 @@
           addEmployeeForm.elements[key].value = value || '';
         }
       });
-      /* addEmployeeForm.elements.name.value = selectedEmployee.name;
-      addEmployeeForm.elements.imageUrl.value = selectedEmployee.imageUrl || "" ;
-      addEmployeeForm.elements.position.value = selectedEmployee.position;
-      addEmployeeForm.elements.email.value = selectedEmployee.email;
-      addEmployeeForm.elements.salary.value = selectedEmployee.salary;
-      addEmployeeForm.elements.hire_date.value = selectedEmployee.hire_date; */
 
-      //change the title and submit button text
+      //form UI
       addEmployeeForm.querySelector("h1").textContent = "Edit Employee";
       addEmployeeForm.querySelector('[type="submit"]').value = "Save Changes";
 
@@ -160,7 +152,7 @@
   });
  
 
-    
+   //initial rendering 
   renderEmployees();
   if(selectedEmployee) renderSingleEmployee();
 })();
