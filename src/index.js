@@ -11,6 +11,15 @@
   const addEmployeeModal = document.querySelector(".addEmployeeModal");
   const addEmployeeForm = document.querySelector(".addEmployee-create");
 
+  function toBase64(file){
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = ()=> resolve(reader.result);
+      reader.onerror = (err)=> reject(err);
+    })
+  }
+
   const saveEmployees = () => {
     localStorage.setItem("employees", JSON.stringify(employees));
   }
@@ -18,14 +27,14 @@
   //Load list of employees from local storage if exist
   const loadEmployees = async ()=> {
     try{
-      /* const localData = localStorage.getItem("employees");
+      const localData = localStorage.getItem("employees");
       if(localData){
         employees = JSON.parse(localData);
-      }else{ */
+      }else{
         const res = await fetch("data.json");
         employees = await res.json();
       
-    }catch(e){
+    }}catch(e){
       console.error("failed to load employee data: ", e);
       employees = [];
     }
@@ -90,22 +99,43 @@
   });
 
   //form submission
-  addEmployeeForm.addEventListener("submit", (e)=>{
+  addEmployeeForm.addEventListener("submit", async (e)=>{
     e.preventDefault();
 
     const formData = new FormData(addEmployeeForm);
     const empData = Object.fromEntries(formData.entries());
+    const imageFile = addEmployeeForm.elements.imageUrl.files[0];
+    const imageUrl = imageFile ? await toBase64(imageFile) : null;
 
     if(!validateFormData(empData)) return;
 
-    empData.id = employees.length ? employees[employees.length -1].id + 1 : 1;
-    empData.imageUrl = empData.imageUrl || "https://cdn-icons-png.flaticon.com/512/0/93.png";
-    empData.salary = Number(empData.salary);
-    employees.push(empData);
-  
+    if(addEmployeeForm.dataset.editingId){
+      const employeeID = parseInt(addEmployeeForm.dataset.editingId, 10);
+      const index = employees.findIndex((emp)=> emp.id=== employeeID);
+      if(index != -1){
+        employees[index]= {
+          ...employees[index], ...empData,
+          imageUrl: imageUrl || employees[index].imageUrl,
+          salary: Number(empData.salary),
+        };
+        if(selectedEmployeeId===employeeID){
+          selectedEmployee = employees[index];
+        }
+      }
+    }else{
+      empData.id = employees.length ? employees[employees.length -1].id + 1 : 1;      
+      empData.imageUrl =  imageUrl || "https://cdn-icons-png.flaticon.com/512/0/93.png";  
+      empData.salary = Number(empData.salary);
+      employees.push(empData);
+    }
+ 
     saveEmployees();
 
     addEmployeeForm.reset();
+
+    addEmployeeForm.querySelector("h1").textContent= "Add a new Employee Info";
+    addEmployeeForm.querySelector('[type="submit"]').value = "Submit";
+    delete addEmployeeForm.dataset.editingId;
 
     renderEmployees();
     renderSingleEmployee();
@@ -127,13 +157,28 @@
       employees = employees.filter((emp)=>{
         return String(emp.id) !== e.target.parentNode.id;
       })
-      //saveEmployees();
+      saveEmployees();
       if(String(selectedEmployeeId)=== e.target.parentNode.id){
         selectedEmployeeId = employees.length ? employees[0].id: null;
         selectedEmployee = employees.length ? employees[0]: null;
         renderSingleEmployee();
       }      
     renderEmployees();
+    }
+  });
+
+  //edit employee info
+  employeeInfo.addEventListener("click", (e)=>{
+    if(e.target.classList.contains("editEmployee") && selectedEmployee){
+      Object.entries(selectedEmployee).forEach(([key, value])=>{
+        if(addEmployeeForm.elements[key] && addEmployeeForm.elements[key].type !== "file"){
+          addEmployeeForm.elements[key].value = value || "";
+        }
+      });
+      addEmployeeForm.querySelector("h1").textContent = "Edit employee";
+      addEmployeeForm.querySelector('[type="submit"]').value = "Save Changes";
+      addEmployeeForm.dataset.editingId = selectedEmployee.id;
+      addEmployeeModal.style.display = "flex";
     }
   });
   
