@@ -2,7 +2,8 @@ In this #machineCodingChallenge - First challenge is to create an Employee Datab
 
 ###__**Frontend Technologies:**__
 
-HTML5 | CSS3 |Vanilla JavaScript (ES6+)
+HTML5 | CSS3 |Vanilla JavaScript (ES6+)<br><br>
+
 
 
 ###🚀 __**What This Project Does**__
@@ -19,7 +20,7 @@ HTML5 | CSS3 |Vanilla JavaScript (ES6+)
 
 💾 Saves all changes persistently using localStorage
 
-🔁 Uses data.json as fallback when localStorage is empty
+🔁 Uses data.json as fallback when localStorage is empty <br><br>
 
 
 ###📚 __**JavaScript Fundamentals Used**__
@@ -44,7 +45,7 @@ Template Literals-	Used for building dynamic HTML strings
 
 Local Storage-	Saves and retrieves data for persistence
 
-Data Validation-	Validates email, salary, and name before saving
+Data Validation-	Validates email, salary, and name before saving <br><br>
 
 
 
