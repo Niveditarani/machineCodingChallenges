@@ -1,11 +1,11 @@
 In this #machineCodingChallenge - First challenge is to create an Employee Database management app.
 
-__**Frontend Technologies:**__
+###__**Frontend Technologies:**__
 
 HTML5 | CSS3 |Vanilla JavaScript (ES6+)
 
 
-🚀 __**What This Project Does**__
+###🚀 __**What This Project Does**__
 
 🧑 Displays a list of employees dynamically
 
@@ -22,7 +22,7 @@ HTML5 | CSS3 |Vanilla JavaScript (ES6+)
 🔁 Uses data.json as fallback when localStorage is empty
 
 
-📚 __**JavaScript Fundamentals Used**__
+###📚 __**JavaScript Fundamentals Used**__
 
 ✅ __**Core Concepts:**__
 
@@ -48,7 +48,7 @@ Data Validation-	Validates email, salary, and name before saving
 
 
 
-__**Level: Intermediate JavaScript**__
+###__**Level: Intermediate JavaScript**__
 
 This project covers intermediate JS concepts, ideal for those who:
 Know basic JS and want to deepen DOM handling
