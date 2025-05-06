@@ -27,15 +27,25 @@ HTML5 | CSS3 |Vanilla JavaScript (ES6+)
 ✅ Core Concepts:
 
 IIFE (Immediately Invoked Function Expression)-	Encapsulates logic to avoid polluting global scope
+
 DOM Manipulation-	Dynamic creation and rendering of employee cards
+
 Event Delegation-	Efficient click and submit handling on parent elements
+
 FormData API-	Extracts input data including uploaded files
+
 FileReader API-	Converts images to base64 format
+
 Async/Await-	Handles asynchronous data fetching and file reading
-Object Destructuring / Spread-	Used for updating employee data immutably
+
+Object Destructuring / Spread-	Used for updating employee data immutable
+
 Template Literals-	Used for building dynamic HTML strings
+
 Local Storage-	Saves and retrieves data for persistence
+
 Data Validation-	Validates email, salary, and name before saving
+
 
 
 Level: Intermediate JavaScript
