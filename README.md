@@ -23,7 +23,9 @@ HTML5 | CSS3 |Vanilla JavaScript (ES6+)
 
 
 📚 JavaScript Fundamentals Used
+
 ✅ Core Concepts:
+
 IIFE (Immediately Invoked Function Expression)-	Encapsulates logic to avoid polluting global scope
 DOM Manipulation-	Dynamic creation and rendering of employee cards
 Event Delegation-	Efficient click and submit handling on parent elements
