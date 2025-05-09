@@ -28,7 +28,7 @@ HTML5 | CSS3 |Vanilla JavaScript (ES6+)<br><br>
 ✅ __**Core Concepts:**__
 
 
-IIFE (Immediately Invoked Function Expression)-	Encapsulates logic to avoid polluting global scope
+IIFE (Immediately Invoked Function Expression)-	Encapsulates logic to avoid polluting global scope 
 
 DOM Manipulation-	Dynamic creation and rendering of employee cards
 
