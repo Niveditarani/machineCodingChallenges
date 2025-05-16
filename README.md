@@ -52,7 +52,7 @@ Data Validation-	Validates email, salary, and name before saving <br><br>
 
 ###__**Level: Intermediate JavaScript**__
 
-This project covers intermediate JS concepts, ideal for those who:
+This project covers intermediate JS concepts, ideal for those who:  
 Know basic JS and want to deepen DOM handling
 Want to build something closer to a real application
 Are preparing for frontend interviews or machine coding rounds
