@@ -25,7 +25,7 @@ HTML5 | CSS3 |Vanilla JavaScript (ES6+)<br><br>
 
 ###📚 __**JavaScript Fundamentals Used**__
 
-✅ __**Core Concepts:**__
+✅ __**Core Concepts:**___
 
 
 IIFE (Immediately Invoked Function Expression)-	Encapsulates logic to avoid polluting global scope 
