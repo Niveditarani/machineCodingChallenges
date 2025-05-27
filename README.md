@@ -1,6 +1,6 @@
 In this #machineCodingChallenge - First challenge is to create an Employee Database management app.
 
-###__**Frontend Technologies used:**__
+####__**Frontend Technologies used:**__
 
 HTML5 | CSS3 |Vanilla JavaScript (ES6+)<br><br>
 
