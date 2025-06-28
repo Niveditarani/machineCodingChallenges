@@ -6,7 +6,7 @@ HTML5 | CSS3 |Vanilla JavaScript (ES6+)<br><br>
 
 
 
-###🚀 __**What This Project Does**___
+###🚀 __**What This Project Does**____
 
 🧑 Displays a list of employees dynamically
 
